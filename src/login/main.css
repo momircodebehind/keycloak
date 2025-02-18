@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+.login-pf body {
+    background: #236cc4 !important;
+}
+
+#storybook-root {
+    height: 80vh !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+#kc-header {
+    margin-bottom: 0 !important;
+}
+
+#kc-header-wrapper {
+    padding: 0 0 20px !important;
+}
+
+.login-pf-page .card-pf {
+    background-color: #fff;
+    border-radius: 16px;
+    padding: 32px !important;
+    max-width: 400px !important;
+}
+
+.login-pf-page .login-pf-header {
+    margin-bottom: 0;
+}
+
+#kc-page-title {
+    color: #000 !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    text-align: start;
+    margin: 0 !important;
+    font-family: "Montserrat", sans-serif !important;
+}
+
+.pf-c-form__label {
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    color: #000 !important;
+    line-height: 135% !important;
+    font-family: "Montserrat", sans-serif !important;
+}
+
+.pf-c-button.pf-m-primary {
+    border-radius: 8px !important;
+    background-color: #142233 !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #fff !important;
+    line-height: 135% !important;
+    font-family: "Montserrat", sans-serif !important;
+}
+
+.pf-c-form-control {
+    padding: 8px 16px !important;
+    border-radius: 8px !important;
+    border: 1px solid #e0e0e0 !important;
+    background-color: #e5f0f5 !important;
+}
+
+.pf-c-input-group {
+    position: relative !important;
+}
+
+.pf-c-button.pf-m-control {
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    position: absolute !important;
+    right: 0 !important;
+}
+
+.pf-c-button.pf-m-control::after {
+    content: "";
+    position: absolute;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+}
