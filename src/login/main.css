@@ -17,6 +17,8 @@
 
 #kc-header-wrapper {
     padding: 0 0 20px !important;
+    width: 100% !important;
+    height: 128px !important;
 }
 
 .login-pf-page .card-pf {
@@ -83,4 +85,9 @@
     width: 100% !important;
     height: 100% !important;
     border: none !important;
+}
+
+.logo-big-lat {
+    width: 100% !important;
+    height: 100% !important;
 }

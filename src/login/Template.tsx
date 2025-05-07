@@ -7,7 +7,7 @@ import { useSetClassName } from "keycloakify/tools/useSetClassName";
 import { useInitialize } from "keycloakify/login/Template.useInitialize";
 import type { I18n } from "./i18n";
 import type { KcContext } from "./KcContext";
-import logo from "../assets/icons/t4a-logo.svg";
+import logo from "../assets/icons/logo-big-lat.svg";
 
 export default function Template(props: TemplateProps<KcContext, I18n>) {
     const {
@@ -52,13 +52,12 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 
     return (
         <div className={kcClsx("kcLoginClass")}>
-            <div id="kc-header" className={kcClsx("kcHeaderClass")}>
-                <div id="kc-header-wrapper" className={kcClsx("kcHeaderWrapperClass")}>
-                    <img src={logo} alt="Logo" />
-                </div>
-            </div>
             <div className={kcClsx("kcFormCardClass")}>
                 <header className={kcClsx("kcFormHeaderClass")}>
+                    <div id="kc-header-wrapper" className={kcClsx("kcHeaderWrapperClass")}>
+                        <img src={logo} alt="Logo" className="logo-big-lat" />
+                    </div>
+
                     {(() => {
                         const node = !(auth !== undefined && auth.showUsername && !auth.showResetCredentials) ? (
                             <h1 id="kc-page-title">{headerNode}</h1>
