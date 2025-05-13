@@ -2,8 +2,20 @@
 import { i18nBuilder } from "keycloakify/login";
 import type { ThemeName } from "../kc.gen";
 
-/** @see: https://docs.keycloakify.dev/features/i18n */
-const { useI18n, ofTypeI18n } = i18nBuilder.withThemeName<ThemeName>().build();
+/** Dodato: podrška za srpski ćirilicu i latinicu */
+const { useI18n, ofTypeI18n } = i18nBuilder
+    .withThemeName<ThemeName>()
+    .withExtraLanguages({
+        sr: {
+            label: "Српски (ћирилица)",
+            getMessages: () => import("./i18n.sr")
+        },
+        "sr-Cyrl": {
+            label: "Srpski (ћирилица)",
+            getMessages: () => import("./i18n.sr-Cyrl")
+        }
+    })
+    .build();
 
 type I18n = typeof ofTypeI18n;
 

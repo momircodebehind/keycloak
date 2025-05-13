@@ -19,6 +19,8 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
 
     const [isLoginButtonDisabled, setIsLoginButtonDisabled] = useState(false);
 
+    const { msg, msgStr } = i18n;
+
     return (
         <Template
             kcContext={kcContext}
@@ -26,7 +28,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
             doUseDefaultCss={doUseDefaultCss}
             classes={classes}
             displayMessage={!messagesPerField.existsError("username", "password")}
-            headerNode={"Prijava"}
+            headerNode={msg("loginAccountTitle")}
             displayInfo={realm.password && realm.registrationAllowed && !registrationDisabled}
         >
             <div id="kc-form">
@@ -44,7 +46,11 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                             {!usernameHidden && (
                                 <div className={kcClsx("kcFormGroupClass")}>
                                     <label htmlFor="username" className={kcClsx("kcLabelClass")}>
-                                        Korisničko ime / ePošta
+                                        {!realm.loginWithEmailAllowed
+                                            ? msg("username")
+                                            : !realm.registrationEmailAsUsername
+                                              ? msg("usernameOrEmail")
+                                              : msg("email")}
                                     </label>
                                     <input
                                         tabIndex={2}
@@ -70,7 +76,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                             )}
                             <div className={kcClsx("kcFormGroupClass")}>
                                 <label htmlFor="password" className={kcClsx("kcLabelClass")}>
-                                    Lozinka
+                                    {msg("password")}
                                 </label>
                                 <PasswordWrapper kcClsx={kcClsx} i18n={i18n} passwordInputId="password">
                                     <input
@@ -103,7 +109,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                     name="login"
                                     id="kc-login"
                                     type="submit"
-                                    value={"Prijavi se"}
+                                    value={msgStr("doLogIn")}
                                 />
                             </div>
                         </form>

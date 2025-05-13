@@ -16,6 +16,30 @@ export const Default: Story = {
     render: () => <KcPageStory />
 };
 
+export const InSerbian: Story = {
+    render: () => (
+        <KcPageStory
+            kcContext={{
+                locale: {
+                    currentLanguageTag: "sr"
+                }
+            }}
+        />
+    )
+};
+
+export const InSerbianCyrillic: Story = {
+    render: () => (
+        <KcPageStory
+            kcContext={{
+                locale: {
+                    currentLanguageTag: "sr-Cyrl"
+                }
+            }}
+        />
+    )
+};
+
 export const WithInvalidCredential: Story = {
     render: () => (
         <KcPageStory
