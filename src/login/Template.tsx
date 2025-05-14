@@ -7,7 +7,8 @@ import { useSetClassName } from "keycloakify/tools/useSetClassName";
 import { useInitialize } from "keycloakify/login/Template.useInitialize";
 import type { I18n } from "./i18n";
 import type { KcContext } from "./KcContext";
-import logo from "../assets/icons/logo-big-lat.svg";
+import logoLatn from "../assets/icons/logo-big-lat.svg";
+import logoCyrl from "../assets/icons/logo-big-cir.svg";
 
 export default function Template(props: TemplateProps<KcContext, I18n>) {
     const {
@@ -28,7 +29,9 @@ export default function Template(props: TemplateProps<KcContext, I18n>) {
 
     const { msg, msgStr } = i18n;
 
-    const { auth, url, message, isAppInitiatedAction } = kcContext;
+    const { auth, url, message, isAppInitiatedAction, locale } = kcContext;
+
+    const logo = locale?.currentLanguageTag.includes("sr-Cyrl-RS") ? logoCyrl : logoLatn;
 
     useEffect(() => {
         document.title = documentTitle ?? msgStr("loginTitle", kcContext.realm.displayName);
