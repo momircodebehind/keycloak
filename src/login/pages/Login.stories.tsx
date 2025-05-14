@@ -21,7 +21,7 @@ export const InSerbian: Story = {
         <KcPageStory
             kcContext={{
                 locale: {
-                    currentLanguageTag: "sr"
+                    currentLanguageTag: "sr-Latn-RS"
                 }
             }}
         />
@@ -33,7 +33,7 @@ export const InSerbianCyrillic: Story = {
         <KcPageStory
             kcContext={{
                 locale: {
-                    currentLanguageTag: "sr-Cyrl"
+                    currentLanguageTag: "sr-Cyrl-RS"
                 }
             }}
         />

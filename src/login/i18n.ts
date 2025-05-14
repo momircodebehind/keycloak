@@ -6,11 +6,11 @@ import type { ThemeName } from "../kc.gen";
 const { useI18n, ofTypeI18n } = i18nBuilder
     .withThemeName<ThemeName>()
     .withExtraLanguages({
-        sr: {
-            label: "Српски (ћирилица)",
+        "sr-Latn-RS": {
+            label: "Srpski (latinica)",
             getMessages: () => import("./i18n.sr")
         },
-        "sr-Cyrl": {
+        "sr-Cyrl-RS": {
             label: "Srpski (ћирилица)",
             getMessages: () => import("./i18n.sr-Cyrl")
         }
